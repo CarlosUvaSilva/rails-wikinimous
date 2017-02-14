@@ -1,8 +1,8 @@
 <h1>Show</h1>
 
 
-<h2> <%= Kramdown::Document.new(@article.title).to_html%> </h2>
-<h3> <%= Kramdown::Document.new(@article.content).to_html%> </h3>
+<%= kramdown @article.title %>
+<%= kramdown @article.content %>
 
 <%= link_to 'Edit', edit_article_path(id: @article.id)%>
 <%= link_to 'Delete', article_path(id: @article.id), method: :delete%>
